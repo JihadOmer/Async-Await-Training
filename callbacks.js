@@ -14,14 +14,15 @@ function getpost() {
   }, 1000);
 }
 
-function createNewPost(post) {
+function createNewPost(post, callback) {
   setTimeout(() => {
     posts.push(post);
+    callback();
   }, 2000);
 }
 
-getpost();
+// getpost(); add it as a parameter for createnewpost()
 // why this function does not work ?
 // because the DOM already paint the UI before the
-// craete post function run, here the important of Async/Await came!! 
-createNewPost({ title: "post three", body: "this is post three" });
+// craete post function run it take longer time(2000), here the important of Async/Await came!!
+createNewPost({ title: "post three", body: "this is post three" }, getpost);
