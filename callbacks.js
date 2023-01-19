@@ -37,7 +37,16 @@ function createNewPost(post) {
   });
 }
 
-createNewPost({ title: "post three", body: "this is Post Three" })
-.then(getpost)
-.catch(err => err)
-// .catch(err => console.log(err))
+// createNewPost({ title: "post three", body: "this is Post Three" })
+// .then(getpost)
+// .catch(err => err)
+// .catch(err => console.log(err)) // another way to catch error
+
+
+
+// to avoid use .then mulitple times you can use promise.all !! and it tkes the longest promis time to fulfill 
+
+// excercise use fetch to show data in the console
+
+
+
