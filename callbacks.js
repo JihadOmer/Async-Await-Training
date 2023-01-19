@@ -42,11 +42,21 @@ function createNewPost(post) {
 // .catch(err => err)
 // .catch(err => console.log(err)) // another way to catch error
 
+// ### excercise :  use fetch to show data in the console
 
+function fetchdata() {
+  fetch("https://jsonplaceholder.typicode.com/users")
+    .then((res) => res.json())
+    .then((res) => console.log(res));
+}
+fetchdata();
 
-// to avoid use .then mulitple times you can use promise.all !! and it tkes the longest promis time to fulfill 
+// ### excercise : covert above function to  Async /await  to show same in data in the console
 
-// excercise use fetch to show data in the console
+async function fetchdata() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const data = await res.json();
 
-
-
+  console.log(data);
+}
+fetchdata();
